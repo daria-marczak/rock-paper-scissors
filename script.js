@@ -30,6 +30,8 @@ var newGameElem = document.getElementById("js-newGameElement"),
     pickElem = document.getElementById("js-playerPickElement"),
     resultsElem = document.getElementById("js-resultsTableElement");
 
+setGameElements();
+
 function setGameElements() {
     switch (gameState) {
         case "started":
@@ -38,6 +40,7 @@ function setGameElements() {
             resultsElem.style.display = "block";
             break;
         case "ended":
+            resultsElem.style.display = "block";
             newGameBtn.innerText = "Start again";
         case "notStarted":
         default:
@@ -135,6 +138,7 @@ function endGame() {
             alert("You have won");
         }
         gameState = "ended";
-            setGameElements();
+        setGameElements();
+        playerResultElem.innerHTML = computerResultElem.innerHTML = "";
     }
 }

@@ -140,5 +140,6 @@ function endGame() {
         gameState = "ended";
         setGameElements();
         playerResultElem.innerHTML = computerResultElem.innerHTML = "";
+        playerPickElem.innerHTML = computerPickElem.innerHTML = "";
     }
 }
